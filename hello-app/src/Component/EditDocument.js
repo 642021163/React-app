@@ -8,14 +8,12 @@ function EditDocument() {
   const [document, setDocument] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [editMode, setEditMode] = useState(false); // ประกาศ setEditMode ที่นี่
 
   useEffect(() => {
     const fetchDocument = async () => {
       try {
         const response = await axios.get(`http://localhost:3000/documents/${id}`);
         setDocument(response.data);
-        setEditMode(true); // การใช้งาน setEditMode
       } catch (error) {
         console.error('Error fetching document:', error);
         setError('Error fetching document');
@@ -27,6 +25,7 @@ function EditDocument() {
     fetchDocument();
   }, [id]);
 
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setDocument(prev => ({
@@ -39,7 +38,7 @@ function EditDocument() {
     e.preventDefault();
     try {
       await axios.put(`http://localhost:3000/documents/${id}`, document);
-      navigate('/');
+      navigate('/home');
     } catch (error) {
       console.error('Error updating document:', error);
       setError('Error updating document');
@@ -103,7 +102,7 @@ function EditDocument() {
         </div>
         <div className='form-actions'>
                 <button type="submit" className='submit-button'>Submit</button>
-                <button type="button" className='cancel-button' onClick={() => setEditMode(false)}>Cancel</button>
+                <button type="button" className='cancel-button'onClick={() => navigate('/home')}>Cancel</button>
               </div>
       </form>
     </div>

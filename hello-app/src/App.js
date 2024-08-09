@@ -9,12 +9,17 @@ import EditDocument from './Component/EditDocument';
 import HomeStatus from './Component/HomeStatus';
 import UserCreate from './Component/UserCreate';
 import UserUpdate from './Component/UserUpdate';
+import File from './Component/File';
+import Navbar from './AppBar/Navbar';
+import Appbar from './AppBar/Appbar';
 import './App.css';
 
 
 function App() {
   return (
     <div className='App'>
+      <Navbar></Navbar>
+      <Appbar></Appbar>
       <Routes>
         <Route path='/' element={<Login />} />
         <Route path="/login" element={<Login />} />
@@ -25,8 +30,11 @@ function App() {
         <Route path='/home1' element={<HomeStatus />} />
         <Route path='/create' element={<UserCreate />} />
         <Route path='/update/:id' element={<UserUpdate />} />
+        <Route path='/file' element={<File />} />
+       
 
       </Routes>
+      
     </div>
   );
 }

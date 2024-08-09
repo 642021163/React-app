@@ -6,7 +6,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 import '../App.css';
 
@@ -86,7 +85,7 @@ function Home() {
     <div className='css-upload'>
       <Navbar expand="lg" className="navbar">
         <Container>
-          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+          <Navbar.Brand href="#home">ระบบเตรียมเอกสารสารบรรณอิเล็กทรอนิกส์</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
@@ -104,7 +103,7 @@ function Home() {
         </Container>
       </Navbar>
 
-     
+
         <h2>Document Information</h2>
         <Container className='home-container'>
         <Row>
@@ -147,65 +146,7 @@ function Home() {
           </Col>
         </Row>
 
-        {editMode && selectedDocument && (
-          <div className='edit-form-container'>
-            <h3>Edit Document</h3>
-            <form onSubmit={handleSubmit} className='edit-form'>
-              <div className='upload2'>
-                <label>ชื่อ:</label>
-                <input
-                  type='text'
-                  name='full_name'
-                  value={selectedDocument.full_name}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className='upload2'>
-                <label>เรื่อง:</label>
-                <input
-                  type='text'
-                  name='subject'
-                  value={selectedDocument.subject}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className='upload2'>
-                <label>จาก:</label>
-                <input
-                  type='text'
-                  name='from_sender'
-                  value={selectedDocument.from_sender}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className='upload2'>
-                <label>ถึง:</label>
-                <input
-                  type='text'
-                  name='to_recipient'
-                  value={selectedDocument.to_recipient}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className='upload2'>
-                <label>หมายเหตุ:</label>
-                <textarea
-                  name='notes'
-                  value={selectedDocument.notes}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className='form-actions'>
-                <button type="submit" className='submit-button'>Submit</button>
-                <button type="button" className='cancel-button' onClick={() => setEditMode(false)}>Cancel</button>
-              </div>
-            </form>
-          </div>
-        )}
+        
       </Container>
     </div>
   );

@@ -44,7 +44,6 @@
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* เงาข้อความ */
   letter-spacing: 0.5px; /* ระยะห่างระหว่างตัวอักษร */
   background: linear-gradient(45deg, #1eeb81, #f39c12); /* พื้นหลังแบบไล่สี */
-  -webkit-background-clip: text; /* ใช้พื้นหลังเป็นสีของข้อความ */
   -webkit-text-fill-color: transparent; /* ซ่อนสีพื้นหลังที่ไม่ได้ใช้ */
   padding: 10px; /* ระยะห่างภายใน */
   border-radius: 5px; /* มุมโค้ง */
@@ -119,14 +118,11 @@ button.btn-primary:hover {
 
 /* Register Page */
 .navbar {
-  background-color: #3495EA;
-  font-family: 'Arial', sans-serif; /* ฟอนต์หลัก */
-  font-weight: bold; /* น้ำหนักฟอนต์ */
-  text-shadow: 1px 1px 2px rgba(192, 220, 35, 0.1); /* เงาข้อความ */
-  letter-spacing: 0.5px; /* ระยะห่างระหว่างตัวอักษร */
-  background: linear-gradient(45deg, #8fe0b6, #3495EA); /* พื้นหลังแบบไล่สี */
-  padding: 10px; /* ระยะห่างภายใน */
-  border-radius: 5px; /* มุมโค้ง */
+  background: #3495EA;
+
+}
+.navbar1{
+  background-color: #ccc;
 }
 
 .Register {
