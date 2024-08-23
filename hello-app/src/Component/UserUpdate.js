@@ -128,4 +128,4 @@ function UserUpdate() {
     )
 }
 
-export default UserUpdate
+export default UserUpdate;

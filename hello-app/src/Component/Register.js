@@ -4,16 +4,10 @@ import Validation from './RegisterValidation';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-
 function Register() {
     // สร้างสถานะของฟอร์ม
     const [values, setValues] = useState({
         username: "",
-        email: "",
         password: "",
         firstname_lastname: "",
         phone_number: "",
@@ -72,7 +66,6 @@ function Register() {
     const resetForm = () => {
         setValues({
             username: "",
-            email: "",
             password: "",
             firstname_lastname: "",
             phone_number: "",
@@ -83,25 +76,6 @@ function Register() {
 
     return (
         <div className='css-upload'>
-            <Navbar expand="lg" className="navbar">
-                <Container>
-                    <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="me-auto">
-                            <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="#link">Link</Nav.Link>
-                            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                            </NavDropdown>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
             <div className='register1'>
                 <div className='Register'>
                     <div className='register2'>
@@ -114,29 +88,16 @@ function Register() {
                         <form onSubmit={handleSubmit}>
                             <div>
                                 <label className='div-container1'>
-                                    ชื่อผู้ใช้ / อีเมล :
+                                    ชื่อผู้ใช้  :
                                 </label>
                                 <input
                                     type='text'
-                                    placeholder='Username'
+                                    placeholder='Email'
                                     className='username'
                                     onChange={handleInput}
                                     name='username'
                                     value={values.username} />
                                 {errors.username && <span className='text-danger'>{errors.username}</span>}
-                            </div>
-                            <div>
-                                <label className='div-container1'>
-                                    อีเมล :
-                                </label>
-                                <input
-                                    type='email'
-                                    placeholder='Email'
-                                    className='email'
-                                    onChange={handleInput}
-                                    name='email'
-                                    value={values.email} />
-                                {errors.email && <span className='text-danger'>{errors.email}</span>}
                             </div>
 
                             <div>

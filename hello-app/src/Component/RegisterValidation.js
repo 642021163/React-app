@@ -2,20 +2,16 @@ function Validation(values) {
     let errors = {};
 
     // Regular expressions for validation
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const usernamePattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
     const phonePattern = /^[0-9]{10}$/; // Example pattern for 10-digit phone numbers
 
-    // Check for empty username
-    if (!values.username.trim()) {
-        errors.username = "กรุณากรอก Username";
-    }
 
     // Check for email and format
-    if (!values.email.trim()) {
-        errors.email = "กรุณากรอก email";
-    } else if (!emailPattern.test(values.email)) {
-        errors.email = "รูปแบบ email ไม่ถูกต้อง";
+    if (!values.username.trim()) {
+        errors.username = "กรุณากรอก email";
+    } else if (!usernamePattern.test(values.username)) {
+        errors.username = "รูปแบบ email ไม่ถูกต้อง";
     }
 
     // Check for password and format

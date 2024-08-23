@@ -49,7 +49,7 @@ function Login() {
         .then(res => {
           console.log('Response data:', res.data);
           if (res.data.success) {
-            navigate('/home');
+            navigate('/homepage');
           } else {
             alert(res.data.message);
           }
